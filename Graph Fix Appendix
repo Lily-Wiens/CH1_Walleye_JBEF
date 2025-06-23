@@ -1,0 +1,29 @@
+# to modify sheets
+
+
+library(DataEditR)
+data_edit()
+
+library(ggplot2)
+
+# Assuming your data frame is called df
+ggplot(Metabolies_All, aes(x = Site, y = K, fill  = Site)) +
+  geom_boxplot(fill = "skyblue", color = "darkblue") +
+  labs(title = "Condition Factor by Site",
+       x = "Site",
+       y = "K") +
+  theme_minimal()+ geom_jitter(width = 0.2, alpha = 0.5, color = "gray40")
+
+ggplot(Metabolies_All, aes(x = Site, y = K, fill = Site)) +
+  geom_boxplot(outlier.shape = NA) +  # Hide outliers so jitter doesn't duplicate them
+  geom_jitter(aes(color = Site), width = 0.2, alpha = 0.6) +
+  labs(title = "Condition by Site",
+       x = "Site",
+       y = "Condition Factor") +
+  theme_minimal()
+
+
+
+
+
+
