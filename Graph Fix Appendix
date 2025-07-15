@@ -6,7 +6,7 @@ data_edit()
 
 library(ggplot2)
 
-# Assuming your data frame is called df
+#   Plot
 ggplot(Metabolies_All, aes(x = Site, y = K, fill  = Site)) +
   geom_boxplot(fill = "skyblue", color = "darkblue") +
   labs(title = "Condition Factor by Site",
